@@ -1,0 +1,72 @@
+﻿Jns printnames 
+Halt
+
+printnames, HEX 000
+			Load PrintName
+            Store X
+            Jump Start
+            
+secondName,	load PrintName
+			store X
+            load finalCheck
+            subt one
+            skipcond 400
+            jump end
+            store finalCheck
+            jump Start
+            
+Start,		LoadI X
+			Subt zero
+            Skipcond 400
+            Jump print
+            Load X
+            Add one
+            Store X
+            LoadI X
+            Subt zero
+            Skipcond 400
+            Jump printspace
+            Load newline
+            Output
+			Load X
+            Add one
+            Store X
+            Jump secondName
+            
+print,		LoadI X
+			Output
+			Load X
+            Add one
+            Store X
+            Jump Start
+            
+printspace, Load space
+			Output
+			Jump Start
+
+end,		JumpI printnames
+
+newline, HEX 00A
+finalCheck, HEX 002
+space,   HEX 020
+zero, HEX 030
+one, HEX 001
+X, HEX 000
+value, HEX 000
+PrintName, ADR myName
+myName,		HEX 04B //K
+        	HEX 075 //u
+        	HEX 061 //a
+        	HEX 06E //n
+        	HEX 030 //0
+			HEX 04A //J
+        	HEX 075 //u
+        	HEX 06E //n
+        	HEX 030 //0
+			HEX 051 //Q
+        	HEX 069 //i
+        	HEX 061 //a
+        	HEX 06E //n
+        	HEX 067 //g
+        	HEX 030 //0
+        	HEX 030 //0

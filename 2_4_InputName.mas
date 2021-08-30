@@ -1,0 +1,30 @@
+﻿Jns subInputName
+Halt
+
+subInputName,   Input
+				Subt zero
+				skipcond 400
+                Jump Print
+                Jump Printspace
+
+Print,			Load X
+				Subt dollar
+                skipcond 400
+                Jump Print1
+                Jump end
+                
+Print1,         Load X
+				Store X
+                LoadI X
+                Add one
+                StoreI X
+                Jump subInputName
+
+Printspace,		
+
+end,			JumpI subInputName
+
+X, HEX 500
+zero, HEX 030
+one, HEX 031
+dollar, HEX 024

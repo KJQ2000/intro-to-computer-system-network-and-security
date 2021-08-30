@@ -1,0 +1,119 @@
+﻿Input / for user to choose	calcuation 
+Store Temp  /Store input
+Load Temp	
+Subt a	/To check whether it is addition or not
+Skipcond 400
+Jump Subtract
+Jump Add / Start Add 
+Add, 			Jns Addition
+				Halt
+                
+Subtract, 		Load Temp / Load the input of the user to check	whether it is subtract or not
+				Subt s
+                Skipcond 400
+                Jump Multiple / Jump multiple to try if it is not subtract
+                Jns Subtraction
+                Halt
+                
+Multiple,		Load Temp / Load the input of the user to check whether it is multiple or not
+				Subt m
+                Skipcond 400
+                Jump Divide / Jump to divide if it is not multiple
+                Jns Multiplication
+                Halt
+                
+Divide,			Load Temp
+				Subt d
+                Skipcond 400
+                Jump Quit
+                Jns Division
+				Halt
+                
+Quit,			Load Temp / If the user input "q", the program will halt
+				Subt q 
+                Skipcond 400
+                Halt
+                Halt
+Addition,		HEX 000 / start of subroutine of addition
+				Input
+                Store X
+                Input 
+                Store Y
+				Load X
+	     		Add Y
+         		Store Sum
+        		Output
+        		JumpI Addition
+
+Subtraction,    HEX 000 / Subroutine of subtraction
+                Input
+                Store X
+                Input 
+                Store Y
+				Load X
+				Subt Y
+                Store Sum
+                Output
+                JumpI Subtraction
+
+                
+Multiplication,			HEX 000 / Subroutine of Multiplication
+                        Input
+                        Store X
+                        Input 
+                        Store Y
+                        
+Loop,					Load A
+						Add X
+                        Store A
+                        Load Y
+                        Subt one
+                        Store Y
+                        
+                        Skipcond 400
+                        Jump Loop
+                        
+                        Load A
+                        Output
+                        JumpI Multiplication
+                        
+Division,				HEX 000 / subroutine of division
+                        Input
+                        Store X
+                        Input 
+                        Store Y
+						Load A
+                        Store A
+Loop1,					Load X
+                        Subt Y
+                        Store X
+                        Load A
+                        Add one
+						Store A
+                        Load X
+                        Skipcond 400
+                        Jump Loop1
+						Load A
+                        Output
+                        JumpI Division
+
+/declaration            
+A, HEX 000
+B, Hex 002
+C, HEX 003
+one, Dec 1
+zero, DEC 0
+
+
+X, HEX 400
+Y, HEX 500
+a, HEX 061
+s, HEX 073
+m, HEX 06D
+d, HEX 064
+q, HEX 071
+E, HEX 045
+R, HEX 052
+O, HEX 04F
+Temp, HEX 600
+Sum, HEX 700

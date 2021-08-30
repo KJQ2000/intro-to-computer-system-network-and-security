@@ -1,0 +1,17 @@
+﻿myNameAdd, ADR myName
+myName, HEX 04B //K
+        HEX 075 //u
+        HEX 061 //a
+        HEX 06E //n
+        HEX 030 //0
+        HEX 04A //J
+        HEX 075 //u
+        HEX 06E //n
+        HEX 030 //0
+        HEX 051 //Q
+        HEX 069 //i
+        HEX 061 //a
+        HEX 06E //n
+        HEX 067 //g
+        HEX 030 //0
+        HEX 030 //0

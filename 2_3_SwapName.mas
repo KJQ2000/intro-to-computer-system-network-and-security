@@ -1,0 +1,90 @@
+﻿subSwapNames,   HEX 000 / start of subroutine to swap
+				Load printName
+                Store X
+                Load Temp
+                Store swapX
+
+swap,			LoadI X
+				Load X
+                Add one
+                Store X
+                Load swapX
+                Add one
+                Store swapX
+                Load length
+                Subt one
+                Store length
+                Skipcond 400
+                Jump swap
+				Load length3
+				Skipcond 800
+                jump end
+                load length2
+				skipcond 800
+                Jump swap3
+				
+swap2,			Load length
+				Add sixteen
+				Store length
+				Load PrintName2
+				Store X
+                Load printName
+                Store swapX
+                Load length2
+				Subt one
+                Store length2
+				Jump swap
+                
+swap3,			Load length
+				Add sixteen
+                Store length
+                Load Temp
+				Store X
+                Load PrintName2
+				Store swapX
+				Load length3
+				Subt one
+                Store length3
+				Jump swap
+                
+end,			JumpI subSwapNames
+
+/Declarations
+Temp, Hex 900
+swapX, HEX 850
+sixteen, DEC  010
+length, HEX  010
+length2, HEX 00B
+length3, DEC 010
+one, HEX 001
+X, HEX 000
+printName, ADR myName
+myName,		HEX 04B //K
+        	HEX 075 //u
+        	HEX 061 //a
+        	HEX 06E //n
+        	HEX 030 //0
+			HEX 04A //J
+        	HEX 075 //u
+        	HEX 06E //n
+        	HEX 030 //0
+			HEX 051 //Q
+        	HEX 069 //i
+        	HEX 061 //a
+        	HEX 06E //n
+        	HEX 067 //g
+        	HEX 030 //0
+        	HEX 030 //0
+            
+PrintName2, ADR myName2
+myName2,	HEX 04A //J
+            HEX 06F //o
+            HEX 068 //h
+            HEX 06E //n
+            HEX 030 //0
+            HEX 04E //N
+            HEX 06F //o
+            HEX 061 //a
+            HEX 068 //h
+            HEX 030 //0
+            HEX 030 //0
